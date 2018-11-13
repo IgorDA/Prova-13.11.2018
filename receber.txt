@@ -1,0 +1,15 @@
+echo Digite o link
+read link
+
+foto="$link"
+tipo=$(echo "$foto" | grep -o .jpg)
+echo $tipo
+
+if test "$tipo" = ".jpg"
+then
+cd /home/igor/Downloads
+echo Fazendo download...
+sleep 1
+wget $link
+fi
+
